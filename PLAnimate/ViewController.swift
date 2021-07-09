@@ -63,7 +63,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         let title = NSMutableAttributedString(string: name)
         let range = (title.string as NSString).range(of: name)
-        title.addAttribute(.link, value: link(data: name), range: range)
+        title.addAttribute(.link, value: link(name: name), range: range)
         cell.titleLabel.attributedText = title
         cell.myimageView.image = UIImage(named:  name)
         
@@ -88,8 +88,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
     }
     
-    func link(data:String) -> String {
-        switch data {
+    func link(name:String) -> String {
+        switch name {
         case Animate.火影忍者.name:
             return "https://myself-bbs.com/thread-42259-1-1.html"
             
